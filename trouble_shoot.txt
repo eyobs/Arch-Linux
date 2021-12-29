@@ -1,0 +1,66 @@
+https://wiki.archlinux.org/title/IBus
+
+sudo pacman -S ibus-m17n
+
+ibus-daemon -drx --panel=/usr/lib/kimpanel-ibus-panel
+
+
+
+
+
+
+=============================================
+error: file `/vmlinuz-linux` not found.
+Loading initial ramdisk ...
+error: you need to load the kernel first.
+
+lsblk
+fdisk -l
+
+=> open and mount root partition sda3
+cryptsetup open --type luks /dev/sda3 crypto_LUKS
+mount /dev/mapper/vg0-root /mnt
+
+=> open and mount boot partition sda2
+cryptsetup open --type luks /dev/sda2 crypto_LUKS2 
+mount /dev/mapper/cryto_LUKS2 /mnt/boot  
+
+arch-chroot /mnt
+
+=> update!
+
+
+
+=> Mounting an external harddrive
+sudo mkdir /mnt/externalHDD
+lsblk (look for the larger portion, ie sdb1)
+sudo mount /dev/sdb1 /mnt/externalHDD
+
+sudo unmount  /dev/sdb1
+
+udisksctl mount -b /dev/sdb1
+cd /run/media/kirtse/Fhdd1
+
+udisksctl unmount -b /dev/sdb1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
